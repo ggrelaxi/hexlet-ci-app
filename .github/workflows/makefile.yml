@@ -33,5 +33,8 @@ jobs:
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     steps:
       - uses: actions/checkout@master
+      
+      - name: auth
+        run: snyk auth
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
